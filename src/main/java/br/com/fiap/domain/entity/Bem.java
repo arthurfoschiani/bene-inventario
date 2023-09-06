@@ -23,7 +23,7 @@ public class Bem {
     @Column(name = "ETQ_BEM", nullable = false)
     private String etiqueta;
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "ID_DEPARTAMENTO", referencedColumnName = "ID_DEPARTAMENTO", foreignKey = @ForeignKey(name = "FK_DEPARTAMENTO"))
+    @JoinColumn(name = "ID_DEPARTAMENTO", referencedColumnName = "ID_DEPARTAMENTO", foreignKey = @ForeignKey(name = "FK_BEM_DEPARTAMENTO"))
     private Departamento localizacao;
     @Column(name = "AQ_BEM")
     private LocalDate aquisicao;
