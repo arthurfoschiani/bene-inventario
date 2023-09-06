@@ -35,8 +35,23 @@ public class Main {
         Inventario inventario = buscarinvertarioPorId(manager);
         System.out.println(inventario);
 
+        List<Bem> bens = findAllBens(manager);
+
+        for (Bem b: bens) {
+            inventario.addBem(b);
+        }
+
+        manager.getTransaction().begin();
+        manager.persist(inventario);
+        manager.getTransaction().commit();
+
         manager.close();
         factory.close();
+    }
+
+    private static List<Bem> findAllBens(EntityManager manager) {
+        String jpql = "FROM Bem";
+        return manager.createQuery(jpql).getResultList();
     }
 
     private static Inventario addInventario(EntityManager manager) {
