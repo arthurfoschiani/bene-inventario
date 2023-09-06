@@ -38,7 +38,7 @@ public class Inventario  {
     private LocalDate inicio;
     @Column(name = "DT_FIM")
     private LocalDate fim;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH})
     @JoinColumn(name = "ID_DEPARTAMENTO", referencedColumnName = "ID_DEPARTAMENTO", foreignKey = @ForeignKey(name = "FK_INVENT_DEPARTAMENTO"))
     private Departamento departamento;
     @Column(name = "RELAT_DEPARTAMENTO")
