@@ -30,7 +30,7 @@ public class Main {
         //Inventario inventario = addInventario(manager);
         //System.out.println(inventario);
 
-        listarTodosBens(manager);
+        //listarTodosBens(manager);
 
         Inventario inventario = buscarinvertarioPorId(manager);
         System.out.println(inventario);
